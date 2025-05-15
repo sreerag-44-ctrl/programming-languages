@@ -16,8 +16,8 @@ use parser::SQLParser;
 /// Entry point for the Mini SQL Parser CLI application.
 fn main() {
     // Greeting message
-    println!("🔷 Welcome to Mini SQL Parser CLI");
-    println!("Type your SQL query below, or type 'exit' to quit.\n");
+    println!("🔷Welcome to the Mini SQL Parser command-line tool");
+    println!("Enter your SQL query below, or type 'exit' to leave.\n");
 
     // Begin a REPL-style input loop
     loop {
@@ -28,7 +28,7 @@ fn main() {
         // Read the input query from the user
         let mut input = String::new();
         if io::stdin().read_line(&mut input).is_err() {
-            eprintln!("❌ Failed to read input."); // Handle read error
+            eprintln!("❌Couldn't read the input."); // Handle read error
             continue;
         }
 
@@ -38,7 +38,7 @@ fn main() {
             continue; // Ignore empty input
         }
         if input.eq_ignore_ascii_case("exit") {
-            println!("👋 Exiting SQL parser. Goodbye!");
+            println!("👋 closing the SQL parser. Bye!");
             break; // Exit the loop and end the program
         }
 
@@ -63,7 +63,7 @@ fn main() {
         match parser.parse_statement() {
             Ok(statement) => {
                 // Successfully parsed SQL statement
-                println!("✅ Parsed Statement:\n{:#?}\n", statement);
+                println!("✅ Processed Statement:\n{:#?}\n", statement);
             }
             Err(e) => {
                 // Error while parsing SQL
