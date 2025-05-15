@@ -1,0 +1,7 @@
+[package]
+name = "sreerag_devadasan"
+version = "0.0.0"
+edition = "2021"
+authors = ["sreerag.devadasan@sa.stud.vu.lt"]
+
+[dependencies]
